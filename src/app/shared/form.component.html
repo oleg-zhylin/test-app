@@ -1,16 +1,35 @@
+{{data | json}}
 <form (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
   <h1 class="h1">{{isEdit ? 'Update' : 'Create'}} User</h1>
   <div class="form-group">
     <label for="fname">Name</label>
-    <input id="fname" type="text" class="form-control" formControlName="firstName">
+    <input 
+        id="fname"
+        type="text"
+        class="form-control"
+        formControlName="firstName"
+        value={{data.firstName}}
+        >
   </div>
   <div class="form-group">
     <label for="lname">Name</label>
-    <input id="lname" type="text" class="form-control" formControlName="lastName">
+    <input 
+        id="lname" 
+        type="text" 
+        class="form-control" 
+        formControlName="lastName"
+        value={{data.lastName}}
+        >
   </div>
   <div class="form-group">
     <label for="age">Age</label>
-    <input id="age" type="number" class="form-control" formControlName="age">
+    <input 
+        id="age"
+        type="number"
+        class="form-control"
+        formControlName="age"
+        value={{data.age}}
+        >
   </div>
   <!--here need display error-->
   <div class="alert alert-danger" *ngIf="error">

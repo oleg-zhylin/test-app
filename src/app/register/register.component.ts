@@ -24,7 +24,6 @@ export class RegisterComponent implements OnDestroy {
     private router: Router
   ) {
     this.user$ = userService.getUser().subscribe((data: any) => {
-      console.log(data);
       if (data && data.firstName)
         this.router.navigate(['dashboard'])
     })
